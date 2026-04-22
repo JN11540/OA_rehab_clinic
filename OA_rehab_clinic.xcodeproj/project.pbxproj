@@ -1,0 +1,850 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D752AD82DF2A10900DE71E2 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 3D752AD72DF2A10900DE71E2 /* GRDB */; };
+		3D89C4342D4B886A00C7269F /* 22.前跨步弓步蹲.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4322D4B886A00C7269F /* 22.前跨步弓步蹲.png */; };
+		3D89C4352D4B886A00C7269F /* 7.負重膝關節終端伸展.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4232D4B886A00C7269F /* 7.負重膝關節終端伸展.png */; };
+		3D89C4362D4B886A00C7269F /* 18.小腿後肌肉伸展（一）.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C42E2D4B886A00C7269F /* 18.小腿後肌肉伸展（一）.png */; };
+		3D89C4372D4B886A00C7269F /* 12.登階運動.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4282D4B886A00C7269F /* 12.登階運動.png */; };
+		3D89C4382D4B886A00C7269F /* 11.大腿內夾運動.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4272D4B886A00C7269F /* 11.大腿內夾運動.png */; };
+		3D89C4392D4B886A00C7269F /* 15.大腿後側肌群伸展（二）.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C42B2D4B886A00C7269F /* 15.大腿後側肌群伸展（二）.png */; };
+		3D89C43A2D4B886A00C7269F /* 4.俯臥抬腿.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4202D4B886A00C7269F /* 4.俯臥抬腿.png */; };
+		3D89C43B2D4B886A00C7269F /* 5.側躺抬腿（外展）.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4212D4B886A00C7269F /* 5.側躺抬腿（外展）.png */; };
+		3D89C43C2D4B886A00C7269F /* 9.部分蹲.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4252D4B886A00C7269F /* 9.部分蹲.png */; };
+		3D89C43D2D4B886A00C7269F /* 17.股四頭肌伸展（二）.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C42D2D4B886A00C7269F /* 17.股四頭肌伸展（二）.png */; };
+		3D89C43E2D4B886A00C7269F /* 10.橋式.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4262D4B886A00C7269F /* 10.橋式.png */; };
+		3D89C43F2D4B886A00C7269F /* 21.側向滑行運動.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4312D4B886A00C7269F /* 21.側向滑行運動.png */; };
+		3D89C4402D4B886A00C7269F /* 14.大腿後側肌群伸展（一）.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C42A2D4B886A00C7269F /* 14.大腿後側肌群伸展（一）.png */; };
+		3D89C4412D4B886A00C7269F /* 6.側躺抬腿（內收）.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4222D4B886A00C7269F /* 6.側躺抬腿（內收）.png */; };
+		3D89C4422D4B886A00C7269F /* 2.膝關節終端伸展.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C41E2D4B886A00C7269F /* 2.膝關節終端伸展.png */; };
+		3D89C4432D4B886A00C7269F /* 1.股四頭肌等長收縮.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C41D2D4B886A00C7269F /* 1.股四頭肌等長收縮.png */; };
+		3D89C4442D4B886A00C7269F /* 19.小腿後肌肉伸展（二）.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C42F2D4B886A00C7269F /* 19.小腿後肌肉伸展（二）.png */; };
+		3D89C4452D4B886A00C7269F /* 8.站立膝關節終端伸展.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4242D4B886A00C7269F /* 8.站立膝關節終端伸展.png */; };
+		3D89C4462D4B886A00C7269F /* 16.股四頭肌伸展（一）.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C42C2D4B886A00C7269F /* 16.股四頭肌伸展（一）.png */; };
+		3D89C4472D4B886A00C7269F /* 13.靠牆深蹲.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4292D4B886A00C7269F /* 13.靠牆深蹲.png */; };
+		3D89C4482D4B886A00C7269F /* 3.躺姿抬腿.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C41F2D4B886A00C7269F /* 3.躺姿抬腿.png */; };
+		3D89C4492D4B886A00C7269F /* 20.前後滑行運動.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C4302D4B886A00C7269F /* 20.前後滑行運動.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D9B53A92D3A2C3E00341379 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D9B538F2D3A2C3C00341379 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D9B53962D3A2C3C00341379;
+			remoteInfo = OA_rehab_clinic;
+		};
+		3D9B53B32D3A2C3E00341379 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D9B538F2D3A2C3C00341379 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D9B53962D3A2C3C00341379;
+			remoteInfo = OA_rehab_clinic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3D752AB62DF2846500DE71E2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3D0B4FCC2D57653C003D4143 /* OA_rehab_clinic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OA_rehab_clinic.xcodeproj; sourceTree = "<group>"; };
+		3D64C4DB2D5447D900E898FE /* OA_rehab_clinic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OA_rehab_clinic.xcodeproj; sourceTree = "<group>"; };
+		3D6C7E632D52F60900CCC6E8 /* OA_rehab_clinic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OA_rehab_clinic.xcodeproj; sourceTree = "<group>"; };
+		3D89C41D2D4B886A00C7269F /* 1.股四頭肌等長收縮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1.股四頭肌等長收縮.png"; sourceTree = "<group>"; };
+		3D89C41E2D4B886A00C7269F /* 2.膝關節終端伸展.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2.膝關節終端伸展.png"; sourceTree = "<group>"; };
+		3D89C41F2D4B886A00C7269F /* 3.躺姿抬腿.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3.躺姿抬腿.png"; sourceTree = "<group>"; };
+		3D89C4202D4B886A00C7269F /* 4.俯臥抬腿.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4.俯臥抬腿.png"; sourceTree = "<group>"; };
+		3D89C4212D4B886A00C7269F /* 5.側躺抬腿（外展）.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5.側躺抬腿（外展）.png"; sourceTree = "<group>"; };
+		3D89C4222D4B886A00C7269F /* 6.側躺抬腿（內收）.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6.側躺抬腿（內收）.png"; sourceTree = "<group>"; };
+		3D89C4232D4B886A00C7269F /* 7.負重膝關節終端伸展.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7.負重膝關節終端伸展.png"; sourceTree = "<group>"; };
+		3D89C4242D4B886A00C7269F /* 8.站立膝關節終端伸展.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8.站立膝關節終端伸展.png"; sourceTree = "<group>"; };
+		3D89C4252D4B886A00C7269F /* 9.部分蹲.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9.部分蹲.png"; sourceTree = "<group>"; };
+		3D89C4262D4B886A00C7269F /* 10.橋式.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10.橋式.png"; sourceTree = "<group>"; };
+		3D89C4272D4B886A00C7269F /* 11.大腿內夾運動.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11.大腿內夾運動.png"; sourceTree = "<group>"; };
+		3D89C4282D4B886A00C7269F /* 12.登階運動.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12.登階運動.png"; sourceTree = "<group>"; };
+		3D89C4292D4B886A00C7269F /* 13.靠牆深蹲.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13.靠牆深蹲.png"; sourceTree = "<group>"; };
+		3D89C42A2D4B886A00C7269F /* 14.大腿後側肌群伸展（一）.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14.大腿後側肌群伸展（一）.png"; sourceTree = "<group>"; };
+		3D89C42B2D4B886A00C7269F /* 15.大腿後側肌群伸展（二）.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "15.大腿後側肌群伸展（二）.png"; sourceTree = "<group>"; };
+		3D89C42C2D4B886A00C7269F /* 16.股四頭肌伸展（一）.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16.股四頭肌伸展（一）.png"; sourceTree = "<group>"; };
+		3D89C42D2D4B886A00C7269F /* 17.股四頭肌伸展（二）.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "17.股四頭肌伸展（二）.png"; sourceTree = "<group>"; };
+		3D89C42E2D4B886A00C7269F /* 18.小腿後肌肉伸展（一）.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "18.小腿後肌肉伸展（一）.png"; sourceTree = "<group>"; };
+		3D89C42F2D4B886A00C7269F /* 19.小腿後肌肉伸展（二）.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19.小腿後肌肉伸展（二）.png"; sourceTree = "<group>"; };
+		3D89C4302D4B886A00C7269F /* 20.前後滑行運動.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20.前後滑行運動.png"; sourceTree = "<group>"; };
+		3D89C4312D4B886A00C7269F /* 21.側向滑行運動.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "21.側向滑行運動.png"; sourceTree = "<group>"; };
+		3D89C4322D4B886A00C7269F /* 22.前跨步弓步蹲.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "22.前跨步弓步蹲.png"; sourceTree = "<group>"; };
+		3D9B53972D3A2C3C00341379 /* OA_rehab_clinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OA_rehab_clinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D9B53A82D3A2C3E00341379 /* OA_rehab_clinicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OA_rehab_clinicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D9B53B22D3A2C3E00341379 /* OA_rehab_clinicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OA_rehab_clinicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DAD27542D56E0E00077C391 /* OA_rehab_clinic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OA_rehab_clinic.xcodeproj; sourceTree = "<group>"; };
+		3DC12F652D52F64000687EAB /* OA_rehab_clinic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OA_rehab_clinic.xcodeproj; sourceTree = "<group>"; };
+		3DDA53072D54533B008702D2 /* OA_rehab_clinic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OA_rehab_clinic.xcodeproj; sourceTree = "<group>"; };
+		3DDA53742D545C3B008702D2 /* OA_rehab_clinic.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = OA_rehab_clinic.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3D9B53992D3A2C3C00341379 /* OA_rehab_clinic */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OA_rehab_clinic;
+			sourceTree = "<group>";
+		};
+		3D9B53AB2D3A2C3E00341379 /* OA_rehab_clinicTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OA_rehab_clinicTests;
+			sourceTree = "<group>";
+		};
+		3D9B53B52D3A2C3E00341379 /* OA_rehab_clinicUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OA_rehab_clinicUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D9B53942D3A2C3C00341379 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D752AD82DF2A10900DE71E2 /* GRDB in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D9B53A52D3A2C3E00341379 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D9B53AF2D3A2C3E00341379 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D0B4FCD2D57653C003D4143 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D64C4DC2D5447D900E898FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D6C7E642D52F60900CCC6E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D752AB02DF2846100DE71E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D89C4332D4B886A00C7269F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D89C41D2D4B886A00C7269F /* 1.股四頭肌等長收縮.png */,
+				3D89C41E2D4B886A00C7269F /* 2.膝關節終端伸展.png */,
+				3D89C41F2D4B886A00C7269F /* 3.躺姿抬腿.png */,
+				3D89C4202D4B886A00C7269F /* 4.俯臥抬腿.png */,
+				3D89C4212D4B886A00C7269F /* 5.側躺抬腿（外展）.png */,
+				3D89C4222D4B886A00C7269F /* 6.側躺抬腿（內收）.png */,
+				3D89C4232D4B886A00C7269F /* 7.負重膝關節終端伸展.png */,
+				3D89C4242D4B886A00C7269F /* 8.站立膝關節終端伸展.png */,
+				3D89C4252D4B886A00C7269F /* 9.部分蹲.png */,
+				3D89C4262D4B886A00C7269F /* 10.橋式.png */,
+				3D89C4272D4B886A00C7269F /* 11.大腿內夾運動.png */,
+				3D89C4282D4B886A00C7269F /* 12.登階運動.png */,
+				3D89C4292D4B886A00C7269F /* 13.靠牆深蹲.png */,
+				3D89C42A2D4B886A00C7269F /* 14.大腿後側肌群伸展（一）.png */,
+				3D89C42B2D4B886A00C7269F /* 15.大腿後側肌群伸展（二）.png */,
+				3D89C42C2D4B886A00C7269F /* 16.股四頭肌伸展（一）.png */,
+				3D89C42D2D4B886A00C7269F /* 17.股四頭肌伸展（二）.png */,
+				3D89C42E2D4B886A00C7269F /* 18.小腿後肌肉伸展（一）.png */,
+				3D89C42F2D4B886A00C7269F /* 19.小腿後肌肉伸展（二）.png */,
+				3D89C4302D4B886A00C7269F /* 20.前後滑行運動.png */,
+				3D89C4312D4B886A00C7269F /* 21.側向滑行運動.png */,
+				3D89C4322D4B886A00C7269F /* 22.前跨步弓步蹲.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D9B538E2D3A2C3C00341379 = {
+			isa = PBXGroup;
+			children = (
+				3D89C4332D4B886A00C7269F /* Resources */,
+				3D9B53992D3A2C3C00341379 /* OA_rehab_clinic */,
+				3D9B53AB2D3A2C3E00341379 /* OA_rehab_clinicTests */,
+				3D9B53B52D3A2C3E00341379 /* OA_rehab_clinicUITests */,
+				3D752AB02DF2846100DE71E2 /* Frameworks */,
+				3D9B53982D3A2C3C00341379 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D9B53982D3A2C3C00341379 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D9B53972D3A2C3C00341379 /* OA_rehab_clinic.app */,
+				3D9B53A82D3A2C3E00341379 /* OA_rehab_clinicTests.xctest */,
+				3D9B53B22D3A2C3E00341379 /* OA_rehab_clinicUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DAD27552D56E0E00077C391 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DC12F662D52F64000687EAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DDA53082D54533B008702D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DDA53752D545C3B008702D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D9B53962D3A2C3C00341379 /* OA_rehab_clinic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D9B53BC2D3A2C3E00341379 /* Build configuration list for PBXNativeTarget "OA_rehab_clinic" */;
+			buildPhases = (
+				3D9B53932D3A2C3C00341379 /* Sources */,
+				3D9B53942D3A2C3C00341379 /* Frameworks */,
+				3D9B53952D3A2C3C00341379 /* Resources */,
+				3D752AB62DF2846500DE71E2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3D9B53992D3A2C3C00341379 /* OA_rehab_clinic */,
+			);
+			name = OA_rehab_clinic;
+			packageProductDependencies = (
+				3D752AD72DF2A10900DE71E2 /* GRDB */,
+			);
+			productName = OA_rehab_clinic;
+			productReference = 3D9B53972D3A2C3C00341379 /* OA_rehab_clinic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D9B53A72D3A2C3E00341379 /* OA_rehab_clinicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D9B53BF2D3A2C3E00341379 /* Build configuration list for PBXNativeTarget "OA_rehab_clinicTests" */;
+			buildPhases = (
+				3D9B53A42D3A2C3E00341379 /* Sources */,
+				3D9B53A52D3A2C3E00341379 /* Frameworks */,
+				3D9B53A62D3A2C3E00341379 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D9B53AA2D3A2C3E00341379 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3D9B53AB2D3A2C3E00341379 /* OA_rehab_clinicTests */,
+			);
+			name = OA_rehab_clinicTests;
+			packageProductDependencies = (
+			);
+			productName = OA_rehab_clinicTests;
+			productReference = 3D9B53A82D3A2C3E00341379 /* OA_rehab_clinicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D9B53B12D3A2C3E00341379 /* OA_rehab_clinicUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D9B53C22D3A2C3E00341379 /* Build configuration list for PBXNativeTarget "OA_rehab_clinicUITests" */;
+			buildPhases = (
+				3D9B53AE2D3A2C3E00341379 /* Sources */,
+				3D9B53AF2D3A2C3E00341379 /* Frameworks */,
+				3D9B53B02D3A2C3E00341379 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D9B53B42D3A2C3E00341379 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3D9B53B52D3A2C3E00341379 /* OA_rehab_clinicUITests */,
+			);
+			name = OA_rehab_clinicUITests;
+			packageProductDependencies = (
+			);
+			productName = OA_rehab_clinicUITests;
+			productReference = 3D9B53B22D3A2C3E00341379 /* OA_rehab_clinicUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D9B538F2D3A2C3C00341379 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					3D9B53962D3A2C3C00341379 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					3D9B53A72D3A2C3E00341379 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3D9B53962D3A2C3C00341379;
+					};
+					3D9B53B12D3A2C3E00341379 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 3D9B53962D3A2C3C00341379;
+					};
+				};
+			};
+			buildConfigurationList = 3D9B53922D3A2C3C00341379 /* Build configuration list for PBXProject "OA_rehab_clinic" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D9B538E2D3A2C3C00341379;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3D752AD62DF2A0F500DE71E2 /* XCRemoteSwiftPackageReference "GRDB" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3D9B53982D3A2C3C00341379 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3DAD27552D56E0E00077C391 /* Products */;
+					ProjectRef = 3DAD27542D56E0E00077C391 /* OA_rehab_clinic.xcodeproj */;
+				},
+				{
+					ProductGroup = 3DDA53082D54533B008702D2 /* Products */;
+					ProjectRef = 3DDA53072D54533B008702D2 /* OA_rehab_clinic.xcodeproj */;
+				},
+				{
+					ProductGroup = 3D0B4FCD2D57653C003D4143 /* Products */;
+					ProjectRef = 3D0B4FCC2D57653C003D4143 /* OA_rehab_clinic.xcodeproj */;
+				},
+				{
+					ProductGroup = 3D64C4DC2D5447D900E898FE /* Products */;
+					ProjectRef = 3D64C4DB2D5447D900E898FE /* OA_rehab_clinic.xcodeproj */;
+				},
+				{
+					ProductGroup = 3DDA53752D545C3B008702D2 /* Products */;
+					ProjectRef = 3DDA53742D545C3B008702D2 /* OA_rehab_clinic.xcodeproj */;
+				},
+				{
+					ProductGroup = 3D6C7E642D52F60900CCC6E8 /* Products */;
+					ProjectRef = 3D6C7E632D52F60900CCC6E8 /* OA_rehab_clinic.xcodeproj */;
+				},
+				{
+					ProductGroup = 3DC12F662D52F64000687EAB /* Products */;
+					ProjectRef = 3DC12F652D52F64000687EAB /* OA_rehab_clinic.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				3D9B53962D3A2C3C00341379 /* OA_rehab_clinic */,
+				3D9B53A72D3A2C3E00341379 /* OA_rehab_clinicTests */,
+				3D9B53B12D3A2C3E00341379 /* OA_rehab_clinicUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D9B53952D3A2C3C00341379 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D89C4342D4B886A00C7269F /* 22.前跨步弓步蹲.png in Resources */,
+				3D89C4352D4B886A00C7269F /* 7.負重膝關節終端伸展.png in Resources */,
+				3D89C4362D4B886A00C7269F /* 18.小腿後肌肉伸展（一）.png in Resources */,
+				3D89C4372D4B886A00C7269F /* 12.登階運動.png in Resources */,
+				3D89C4382D4B886A00C7269F /* 11.大腿內夾運動.png in Resources */,
+				3D89C4392D4B886A00C7269F /* 15.大腿後側肌群伸展（二）.png in Resources */,
+				3D89C43A2D4B886A00C7269F /* 4.俯臥抬腿.png in Resources */,
+				3D89C43B2D4B886A00C7269F /* 5.側躺抬腿（外展）.png in Resources */,
+				3D89C43C2D4B886A00C7269F /* 9.部分蹲.png in Resources */,
+				3D89C43D2D4B886A00C7269F /* 17.股四頭肌伸展（二）.png in Resources */,
+				3D89C43E2D4B886A00C7269F /* 10.橋式.png in Resources */,
+				3D89C43F2D4B886A00C7269F /* 21.側向滑行運動.png in Resources */,
+				3D89C4402D4B886A00C7269F /* 14.大腿後側肌群伸展（一）.png in Resources */,
+				3D89C4412D4B886A00C7269F /* 6.側躺抬腿（內收）.png in Resources */,
+				3D89C4422D4B886A00C7269F /* 2.膝關節終端伸展.png in Resources */,
+				3D89C4432D4B886A00C7269F /* 1.股四頭肌等長收縮.png in Resources */,
+				3D89C4442D4B886A00C7269F /* 19.小腿後肌肉伸展（二）.png in Resources */,
+				3D89C4452D4B886A00C7269F /* 8.站立膝關節終端伸展.png in Resources */,
+				3D89C4462D4B886A00C7269F /* 16.股四頭肌伸展（一）.png in Resources */,
+				3D89C4472D4B886A00C7269F /* 13.靠牆深蹲.png in Resources */,
+				3D89C4482D4B886A00C7269F /* 3.躺姿抬腿.png in Resources */,
+				3D89C4492D4B886A00C7269F /* 20.前後滑行運動.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D9B53A62D3A2C3E00341379 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D9B53B02D3A2C3E00341379 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D9B53932D3A2C3C00341379 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D9B53A42D3A2C3E00341379 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D9B53AE2D3A2C3E00341379 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D9B53AA2D3A2C3E00341379 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D9B53962D3A2C3C00341379 /* OA_rehab_clinic */;
+			targetProxy = 3D9B53A92D3A2C3E00341379 /* PBXContainerItemProxy */;
+		};
+		3D9B53B42D3A2C3E00341379 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D9B53962D3A2C3C00341379 /* OA_rehab_clinic */;
+			targetProxy = 3D9B53B32D3A2C3E00341379 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3D9B53BA2D3A2C3E00341379 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D9B53BB2D3A2C3E00341379 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Release;
+		};
+		3D9B53BD2D3A2C3E00341379 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OA_rehab_clinic/OA_rehab_clinic.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"OA_rehab_clinic/Preview Content\"";
+				DEVELOPMENT_TEAM = 5KRVTJ9ND4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ttri-clinicaloa";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		3D9B53BE2D3A2C3E00341379 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OA_rehab_clinic/OA_rehab_clinic.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"OA_rehab_clinic/Preview Content\"";
+				DEVELOPMENT_TEAM = 5KRVTJ9ND4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ttri-clinicaloa";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		3D9B53C02D3A2C3E00341379 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 5KRVTJ9ND4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ttri-clinicaloa";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OA_rehab_clinic.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OA_rehab_clinic";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		3D9B53C12D3A2C3E00341379 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 5KRVTJ9ND4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ttri-clinicaloa";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OA_rehab_clinic.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OA_rehab_clinic";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		3D9B53C32D3A2C3E00341379 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 5KRVTJ9ND4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ttri-clinicaloa";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = OA_rehab_clinic;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		3D9B53C42D3A2C3E00341379 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 5KRVTJ9ND4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ttri-clinicaloa";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = OA_rehab_clinic;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D9B53922D3A2C3C00341379 /* Build configuration list for PBXProject "OA_rehab_clinic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D9B53BA2D3A2C3E00341379 /* Debug */,
+				3D9B53BB2D3A2C3E00341379 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D9B53BC2D3A2C3E00341379 /* Build configuration list for PBXNativeTarget "OA_rehab_clinic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D9B53BD2D3A2C3E00341379 /* Debug */,
+				3D9B53BE2D3A2C3E00341379 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D9B53BF2D3A2C3E00341379 /* Build configuration list for PBXNativeTarget "OA_rehab_clinicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D9B53C02D3A2C3E00341379 /* Debug */,
+				3D9B53C12D3A2C3E00341379 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D9B53C22D3A2C3E00341379 /* Build configuration list for PBXNativeTarget "OA_rehab_clinicUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D9B53C32D3A2C3E00341379 /* Debug */,
+				3D9B53C42D3A2C3E00341379 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D752AD62DF2A0F500DE71E2 /* XCRemoteSwiftPackageReference "GRDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D752AD72DF2A10900DE71E2 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D752AD62DF2A0F500DE71E2 /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3D9B538F2D3A2C3C00341379 /* Project object */;
+}

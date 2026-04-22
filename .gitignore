@@ -1,0 +1,11 @@
+build/
+
+# Build Server Protocol configuration (IDE-specific)
+buildServer.json
+
+# Development resources folder
+dev-resources/
+
+.env
+.DS_Store
+._*

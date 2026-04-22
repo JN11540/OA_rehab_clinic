@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>409</string>
+					<key>StartingColumnNumber</key>
+					<string>5</string>
+					<key>StartingLineNumber</key>
+					<string>409</string>
+					<key>Timestamp</key>
+					<string>763358262.112587</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>OA_rehab_clinic/Features/Exercise/ExerciseEdit/ExerciseDropZone.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>            
+            self.moveItem(fromIndex: draggedItemIndex, toIndex: targetIndex)
+     </string>
+				<key>trailing</key>
+				<string>       return true
+        }
+    }
+</string>
+			</dict>
+			<key>title</key>
+			<string>Error: Failed to produce diagnostic for expression; please submit a bug report (https://swift.org/contributing/#reporting-bugs)</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>

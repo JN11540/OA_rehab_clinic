@@ -21,6 +21,10 @@ class JSONImportService {
     // MARK: - 主入口
 
     func importJSON(from url: URL) throws -> String {
+        let accessing = url.startAccessingSecurityScopedResource()
+        defer {
+            if accessing { url.stopAccessingSecurityScopedResource() }
+        }
         let data = try Data(contentsOf: url)
         return try importJSON(data)
     }

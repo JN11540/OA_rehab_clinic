@@ -10,6 +10,8 @@ import UIKit
 
 @main
 struct OA_rehab_clinicApp: App {
+    @StateObject private var importManager = StateManager.shared
+
     init() {
         // 強制使用 Light Mode - 支援 iOS 17
         if #available(iOS 17.0, *) {
@@ -20,11 +22,25 @@ struct OA_rehab_clinicApp: App {
             }
         }
     }
-    
+
     var body: some Scene {
         WindowGroup {
             WelcomeView()
-                .preferredColorScheme(.light)  // SwiftUI 視圖層級強制 Light Mode
+                .preferredColorScheme(.light)
+                .overlay(alignment: .top) {
+                    ToastView(manager: importManager)
+                }
+                .onOpenURL { url in
+                    Task { @MainActor in
+                        importManager.state = .importing
+                        do {
+                            let message = try JSONImportService.shared.importJSON(from: url)
+                            importManager.setSuccess(message)
+                        } catch {
+                            importManager.setFailure(error.localizedDescription)
+                        }
+                    }
+                }
         }
     }
 }

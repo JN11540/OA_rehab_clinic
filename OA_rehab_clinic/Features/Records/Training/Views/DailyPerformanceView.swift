@@ -79,9 +79,25 @@ struct DailyPerformanceView: View {
                             performance: 4,
                             notes: nil
                         )
-                    ] : []
+                    ] : [],
+                    targetRestTime: nil,
+                    targetDuration: nil,
+                    targetKneeAngleStart: nil,
+                    targetKneeAngleEnd: nil,
+                    targetHipAngleStart: nil,
+                    targetHipAngleEnd: nil,
+                    targetMVIC: nil,
+                    stimulationEnabled: nil,
+                    stimulationIntensity: nil,
+                    muscleStrength: nil,
+                    stability: nil,
+                    regularity: nil,
+                    reactionTime: nil,
+                    completionRate: nil
                 )
-            }
+            },
+            totalDuration: nil,
+            avgPainScore: nil
         )
         
         let mockMenu = TrainingMenu(
@@ -212,7 +228,7 @@ struct DailyPerformanceView: View {
                                 date: selectedDate,
                                 menuTitle: data.menu.title,
                                 totalDuration: effectiveUseMockData ? getMockSessionDuration() : calculateTotalDuration(data.record),
-                                vasScore: effectiveUseMockData ? getMockVASScore() : nil
+                                vasScore: effectiveUseMockData ? getMockVASScore() : data.record.avgPainScore
                             )
                         }
                         
@@ -417,8 +433,7 @@ struct DailyPerformanceView: View {
     }
     
     private func calculateTotalDuration(_ record: TrainingRecord) -> TimeInterval? {
-        // 簡化計算，實際應該從詳細記錄計算
-        return nil // 從GRDB獲取真實數據時會實現
+        return record.totalDuration
     }
     
     private func getMockSessionDuration() -> TimeInterval? {
@@ -436,21 +451,46 @@ struct DailyPerformanceView: View {
     }
     
     private func createTherapistSettings(for exerciseRecord: TrainingRecord.ExerciseRecord) -> TherapistSettings? {
-        // 簡化版本，實際應該從實際設定創建
         return TherapistSettings(
             exerciseName: exerciseRecord.exerciseId,
             sets: exerciseRecord.sets.count,
             repetitions: exerciseRecord.sets.first?.repetitions ?? 0,
-            restTime: 30
+            restTime: exerciseRecord.targetRestTime ?? 30,
+            mvic: exerciseRecord.targetMVIC,
+            maintainTime: exerciseRecord.targetDuration,
+            kneeAngleStart: exerciseRecord.targetKneeAngleStart,
+            kneeAngleEnd: exerciseRecord.targetKneeAngleEnd,
+            hipAngleStart: exerciseRecord.targetHipAngleStart,
+            hipAngleEnd: exerciseRecord.targetHipAngleEnd,
+            stimulation: exerciseRecord.stimulationEnabled ?? false,
+            stimulationIntensity: exerciseRecord.stimulationIntensity
         )
     }
     
     private func createMetricsData(for exerciseRecord: TrainingRecord.ExerciseRecord) -> [MetricData]? {
-        // 簡化版本，實際應該從GRDB獲取詳細指標
         guard !exerciseRecord.sets.isEmpty else { return nil }
-        
+
+        // 優先使用從 JSON 匯入的真實指標
+        if let strength = exerciseRecord.muscleStrength {
+            var metrics: [MetricData] = []
+            metrics.append(MetricData(type: "肌力", score: strength, unit: "分", timestamp: Date()))
+            if let v = exerciseRecord.stability {
+                metrics.append(MetricData(type: "穩定度", score: v, unit: "分", timestamp: Date()))
+            }
+            if let v = exerciseRecord.regularity {
+                metrics.append(MetricData(type: "規律性", score: v, unit: "分", timestamp: Date()))
+            }
+            if let v = exerciseRecord.reactionTime {
+                metrics.append(MetricData(type: "反應時間", score: v, unit: "分", timestamp: Date()))
+            }
+            if let v = exerciseRecord.completionRate {
+                metrics.append(MetricData(type: "完成度", score: v, unit: "分", timestamp: Date()))
+            }
+            return metrics
+        }
+
+        // fallback：舊資料無指標時，用粗略換算
         let avgPerformance = exerciseRecord.sets.reduce(0.0) { $0 + Double($1.performance) } / Double(exerciseRecord.sets.count)
-        
         return [
             MetricData(type: "表現評分", score: avgPerformance * 20, unit: "分", timestamp: Date())
         ]

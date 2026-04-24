@@ -864,6 +864,23 @@ class TrainingDataManager: ObservableObject {
         }
     }
     
+    /// Query by exercise name string — supports all 22 exercises
+    func getTrainingResults(
+        for patientId: String,
+        exerciseName: String,
+        startDate: Date,
+        endDate: Date
+    ) -> [TrainingVisualizationData] {
+        return trainingResults
+            .filter { result in
+                result.patientId == patientId &&
+                result.exerciseName == exerciseName &&
+                result.date >= startDate &&
+                result.date <= endDate
+            }
+            .sorted { $0.date < $1.date }
+    }
+
     /**
      * 添加新的訓練結果
      */

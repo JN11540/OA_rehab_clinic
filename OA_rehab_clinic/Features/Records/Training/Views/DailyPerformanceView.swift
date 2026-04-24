@@ -44,15 +44,23 @@ struct DailyPerformanceView: View {
         if effectiveUseMockData {
             // 使用模擬數據
             return mockDailyTrainingData
-        } else {
-            // 使用真實數據
-            if let record = recordStore.getTrainingRecords(for: patient.id)
-                .first(where: { Calendar.current.isDate($0.date, inSameDayAs: selectedDate) }),
-               let menu = menuStore.getMenu(by: record.menuId) {
-                return DailyTrainingData(record: record, menu: menu)
-            }
         }
-        return nil
+
+        guard let record = recordStore.getTrainingRecords(for: patient.id)
+            .first(where: { Calendar.current.isDate($0.date, inSameDayAs: selectedDate) })
+        else { return nil }
+
+        // 患者 JSON 的 menuId 不是合法 UUID，menuStore 永遠找不到對應菜單。
+        // 使用 placeholder 讓動作清單與指標數值正常顯示，菜單名稱降級為「訓練課程」。
+        let menu = menuStore.getMenu(by: record.menuId) ?? TrainingMenu(
+            id: record.menuId,
+            title: "訓練課程",
+            isExclusive: true,
+            color: .blue,
+            exercises: [],
+            patientId: patient.id
+        )
+        return DailyTrainingData(record: record, menu: menu)
     }
     
     // 模擬數據的 DailyTrainingData 轉換

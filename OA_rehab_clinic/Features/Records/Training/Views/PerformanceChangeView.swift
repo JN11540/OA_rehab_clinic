@@ -242,6 +242,7 @@ struct GenericPerformanceChartView: View {
         }
         .onAppear { updateTrainingResults() }
         .onChange(of: parentDateRange) { _ in updateTrainingResults() }
+        .onChange(of: exerciseName) { _ in updateTrainingResults() }
     }
 
     private func updateTrainingResults() {

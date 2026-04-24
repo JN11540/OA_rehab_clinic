@@ -7,6 +7,7 @@ class JSONImportService {
     enum ImportError: LocalizedError {
         case unknownFormat
         case decodingFailed(String)
+        case invalidExerciseId(String)
 
         var errorDescription: String? {
             switch self {
@@ -14,6 +15,8 @@ class JSONImportService {
                 return "無法識別的 JSON 格式"
             case .decodingFailed(let msg):
                 return "解析失敗：\(msg)"
+            case .invalidExerciseId(let id):
+                return "JSON格式錯誤：exerciseId「\(id)」不是合法的動作名稱"
             }
         }
     }
@@ -35,6 +38,9 @@ class JSONImportService {
 
         // 嘗試訓練結果（單筆）
         if let result = try? decoder.decode(PatientTrainingResult.self, from: data) {
+            guard ExerciseValidator.isValid(result.exerciseId) else {
+                throw ImportError.invalidExerciseId(result.exerciseId)
+            }
             importTrainingResult(result)
             return "訓練紀錄匯入成功"
         }

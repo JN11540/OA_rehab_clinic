@@ -73,50 +73,17 @@ class RecordsMockDataManager: ObservableObject {
     }
     
     private init() {
-        // 🛠️ 開發期間臨時設定：強制開啟模擬數據
-        let forceEnableForDevelopment = true  // 設為 false 可恢復正常邏輯
-        
-        if forceEnableForDevelopment {
-            self.globalMockDataEnabled = true
-            print("🛠️ 開發期間強制開啟模擬數據")
-        } else {
-            // 正常的環境檢測邏輯
-            #if DEBUG
-            let defaultValue = true // 開發環境預設開啟
-            #else
-            let defaultValue = false // 生產環境預設關閉
-            #endif
-            
-            self.globalMockDataEnabled = UserDefaults.standard.object(forKey: "recordsGlobalMockDataEnabled") as? Bool ?? defaultValue
-            
-            // 生產環境強制關閉
-            if isProduction {
-                globalMockDataEnabled = false
-            }
-        }
-        
-        // 詳細的初始化狀態報告
+        // 預設關閉虛擬數據，優先使用 UserDefaults 真實數據
+        let defaultValue = false
+        self.globalMockDataEnabled = UserDefaults.standard.object(
+            forKey: "recordsGlobalMockDataEnabled") as? Bool ?? defaultValue
+
+        if isProduction { globalMockDataEnabled = false }
+
         let savedValue = UserDefaults.standard.object(forKey: "recordsGlobalMockDataEnabled") as? Bool
         print("🔧 RecordsMockDataManager 初始化")
-        print("   - 編譯環境: \(isDevelopment ? "開發 (DEBUG)" : "生產 (RELEASE)")")
-        
-        if forceEnableForDevelopment {
-            print("   - 開發模式: 強制開啟")
-        } else {
-            #if DEBUG
-            let displayDefaultValue = true
-            #else
-            let displayDefaultValue = false
-            #endif
-            print("   - 環境預設值: \(displayDefaultValue)")
-        }
-        
         print("   - UserDefaults 儲存值: \(savedValue?.description ?? "無儲存值")")
-        print("   - 最終全局模擬數據狀態: \(globalMockDataEnabled ? "✅ 開啟" : "❌ 關閉")")
-        
-        if !forceEnableForDevelopment && isProduction && (savedValue == true) {
-            print("⚠️ 注意：生產環境強制關閉模擬數據，忽略 UserDefaults 中的 true 設定")
-        }
+        print("   - 最終狀態: \(globalMockDataEnabled ? "✅ 開啟" : "❌ 關閉")")
     }
     
     // MARK: - 患者數據檢查

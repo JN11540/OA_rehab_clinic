@@ -313,19 +313,6 @@ struct DailyPerformanceView: View {
         .onAppear {
             scheduleStore.reloadSchedules()
             selectedDate = Date()
-            
-            // 設置當前患者到全局管理器
-            mockDataManager.currentPatient = patient
-            
-            // 調試：檢查當前環境狀態
-            print("🔍 DailyPerformanceView onAppear:")
-            print("   - mockDataManager.isProduction: \(mockDataManager.isProduction)")
-            print("   - mockDataManager.globalMockDataEnabled: \(mockDataManager.globalMockDataEnabled)")
-            print("   - mockTrainingSessions.isEmpty: \(mockTrainingSessions.isEmpty)")
-            
-            // 🛠️ 臨時修復：直接生成模擬數據，忽略環境檢測
-            print("🛠️ 強制生成模擬數據（臨時修復）")
-            generateMockDataIfNeeded()
         }
         .onChange(of: calculateExerciseToggleItems().map { $0.id }) { newIds in
             let currentItems = calculateExerciseToggleItems()

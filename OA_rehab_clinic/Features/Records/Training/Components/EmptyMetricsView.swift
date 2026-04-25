@@ -97,6 +97,16 @@ extension MetricConfig {
         MetricConfig(title: "反應時間", color: .orange, unit: "分"),
         MetricConfig(title: "完成度", color: .purple, unit: "分")
     ]
+
+    static let allSevenMetrics: [MetricConfig] = [
+        MetricConfig(title: "肌力",   color: .red,    unit: "分"),
+        MetricConfig(title: "穩定度", color: .blue,   unit: "分"),
+        MetricConfig(title: "規律性", color: .green,  unit: "分"),
+        MetricConfig(title: "反應時間", color: .orange, unit: "分"),
+        MetricConfig(title: "完成度", color: .purple, unit: "分"),
+        MetricConfig(title: "柔軟度", color: .mint,   unit: "分"),
+        MetricConfig(title: "平衡性", color: .indigo, unit: "分")
+    ]
     
     /**
      * 根據動作名稱獲取對應的指標配置

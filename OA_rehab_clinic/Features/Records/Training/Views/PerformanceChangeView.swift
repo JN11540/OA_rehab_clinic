@@ -227,13 +227,23 @@ struct GenericPerformanceChartView: View {
                                 data: trainingResults.map { ($0.date, $0.performance.completionRate) },
                                 color: .purple, unit: "分"
                             )
+                            PerformanceChartCard(
+                                title: "柔軟度",
+                                data: trainingResults.map { ($0.date, $0.performance.flexibility) },
+                                color: .mint, unit: "分"
+                            )
+                            PerformanceChartCard(
+                                title: "平衡性",
+                                data: trainingResults.map { ($0.date, $0.performance.balance) },
+                                color: .indigo, unit: "分"
+                            )
                         }
                         .padding(.horizontal)
                     }
                 } else {
                     EmptyMetricsView(
                         exerciseName: exerciseName,
-                        metrics: MetricConfig.coreMetrics,
+                        metrics: MetricConfig.allSevenMetrics,
                         showTitle: true
                     )
                 }
@@ -249,9 +259,6 @@ struct GenericPerformanceChartView: View {
         let endDate = Date()
         let startDate = Calendar.current.date(
             byAdding: .day, value: -range.days, to: endDate) ?? endDate
-        
-        print("🔍 exerciseName: '\(name)' parentDateRange: \(range.days)")
-        
         trainingResults = dataManager.getTrainingResults(
             for: patient.id,
             exerciseName: name,

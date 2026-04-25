@@ -135,7 +135,9 @@ class JSONImportService {
             stability: metric("穩定性_角度"),
             regularity: metric("規律性_角度"),
             reactionTime: metric("反應時間"),
-            completionRate: metric("完成度")
+            completionRate: metric("完成度"),
+            flexibility: metric("柔軟度"),
+            balance: metric("平衡性")
         )
 
         return TrainingVisualizationData(

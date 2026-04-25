@@ -249,6 +249,9 @@ struct GenericPerformanceChartView: View {
         let endDate = Date()
         let startDate = Calendar.current.date(
             byAdding: .day, value: -parentDateRange.days, to: endDate) ?? endDate
+        
+        print("🔍 exerciseName: '\(exerciseName)'")
+        
         trainingResults = dataManager.getTrainingResults(
             for: patient.id,
             exerciseName: exerciseName,

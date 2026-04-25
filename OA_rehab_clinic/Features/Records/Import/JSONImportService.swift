@@ -45,11 +45,11 @@ class JSONImportService {
             return "訓練紀錄匯入成功"
         }
 
-//        // 嘗試評量結果（單筆）
-//        if let result = try? decoder.decode(PatientAssessmentResult.self, from: data) {
-//            importAssessmentResult(result)
-//            return "評量紀錄匯入成功"
-//        }
+       // 嘗試評量結果（單筆）
+       if let result = try? decoder.decode(PatientAssessmentResult.self, from: data) {
+           importAssessmentResult(result)
+           return "評量紀錄匯入成功"
+       }
 
         throw ImportError.unknownFormat
     }

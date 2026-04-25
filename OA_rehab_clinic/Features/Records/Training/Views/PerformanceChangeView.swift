@@ -240,21 +240,21 @@ struct GenericPerformanceChartView: View {
             }
             .padding(.bottom, 20)
         }
-        .onAppear { updateTrainingResults() }
-        .onChange(of: parentDateRange) { _ in updateTrainingResults() }
-        .onChange(of: exerciseName) { _ in updateTrainingResults() }
+        .onAppear { updateTrainingResults(name: exerciseName, range: parentDateRange) }
+        .onChange(of: parentDateRange) { newRange in updateTrainingResults(name: exerciseName, range: newRange) }
+        .onChange(of: exerciseName) { newName in updateTrainingResults(name: newName, range: parentDateRange) }
     }
 
-    private func updateTrainingResults() {
+    private func updateTrainingResults(name: String, range: DateRange) {
         let endDate = Date()
         let startDate = Calendar.current.date(
-            byAdding: .day, value: -parentDateRange.days, to: endDate) ?? endDate
+            byAdding: .day, value: -range.days, to: endDate) ?? endDate
         
-        print("🔍 exerciseName: '\(exerciseName)' parentDateRange: \(parentDateRange.days)")
+        print("🔍 exerciseName: '\(name)' parentDateRange: \(range.days)")
         
         trainingResults = dataManager.getTrainingResults(
             for: patient.id,
-            exerciseName: exerciseName,
+            exerciseName: name,
             startDate: startDate,
             endDate: endDate
         )

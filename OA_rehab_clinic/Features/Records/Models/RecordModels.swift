@@ -117,13 +117,21 @@ class RecordStore: ObservableObject {
         startDate: Date,
         endDate: Date
     ) -> [(date: Date, record: TrainingRecord.ExerciseRecord)] {
-        return trainingRecords
+        let calendar = Calendar.current
+        let allMatching = trainingRecords
             .filter { $0.patientId == patientId && $0.date >= startDate && $0.date <= endDate }
             .flatMap { training in
                 training.exercises
                     .filter { $0.exerciseId == exerciseName }
                     .map { (date: training.date, record: $0) }
             }
+
+        // 每天只保留時間戳最新的一筆
+        let grouped = Dictionary(grouping: allMatching) {
+            calendar.startOfDay(for: $0.date)
+        }
+        return grouped.values
+            .compactMap { $0.max(by: { $0.date < $1.date }) }
             .sorted { $0.date < $1.date }
     }
     

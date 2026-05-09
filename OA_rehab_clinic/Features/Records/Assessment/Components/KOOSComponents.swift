@@ -41,7 +41,7 @@ struct KOOSAssessmentToggleView: View {
     
     private var recentRecords: [AssessmentRecord] {
         recordStore.getAssessmentRecords(for: patient.id)
-            .filter { $0.assessmentId.contains("KOOS") || $0.scores.keys.contains("疼痛") }
+            .filter { $0.assessmentId.contains("KOOS") }
             .sorted { $0.date > $1.date }
             .prefix(3)
             .map { $0 }

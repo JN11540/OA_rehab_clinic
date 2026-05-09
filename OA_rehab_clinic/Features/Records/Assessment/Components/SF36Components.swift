@@ -45,13 +45,13 @@ struct SF36AssessmentToggleView: View {
         recordStore.getAssessmentRecords(for: patient.id)
             .first(where: { 
                 Calendar.current.isDate($0.date, inSameDayAs: selectedDate) &&
-                ($0.assessmentId.contains("SF-36") || $0.scores.keys.contains("身體功能"))
+                $0.assessmentId.contains("SF-36")
             })
     }
     
     private var recentRecords: [AssessmentRecord] {
         recordStore.getAssessmentRecords(for: patient.id)
-            .filter { $0.assessmentId.contains("SF-36") || $0.scores.keys.contains("身體功能") }
+            .filter { $0.assessmentId.contains("SF-36") }
             .sorted { $0.date > $1.date }
             .prefix(3)
             .map { $0 }

@@ -7,12 +7,32 @@ struct TrainingRecord: Identifiable, Codable {
     let date: Date
     let menuId: UUID
     let exercises: [ExerciseRecord]
-    
+    let totalDuration: TimeInterval?   // 本次訓練總時長（秒）
+    let avgPainScore: Double?          // 平均疼痛分數 VAS（0–10）
+
     struct ExerciseRecord: Identifiable, Codable {
         let id: UUID
         let exerciseId: String
         let sets: [SetRecord]
-        
+
+        // 治療師設定（對應 JSON targetParameters）
+        let targetRestTime: Int?
+        let targetDuration: Int?
+        let targetKneeAngleStart: Int?
+        let targetKneeAngleEnd: Int?
+        let targetHipAngleStart: Int?
+        let targetHipAngleEnd: Int?
+        let targetMVIC: Int?
+        let stimulationEnabled: Bool?
+        let stimulationIntensity: Int?
+
+        // 整體表現指標（對應 JSON overallMetrics，值域 0–100）
+        let muscleStrength: Double?
+        let stability: Double?
+        let regularity: Double?
+        let reactionTime: Double?
+        let completionRate: Double?
+
         struct SetRecord: Codable {
             let repetitions: Int
             let weight: Double

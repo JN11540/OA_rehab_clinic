@@ -34,19 +34,25 @@ struct TrainingPerformanceMetrics: Codable, Equatable {
     let regularity: Double          // 規律性 (0-100)
     let reactionTime: Double        // 反應時間 (0-100分，越高越好)
     let completionRate: Double      // 完成度 (0-100)
-    
+    let flexibility: Double         // 柔軟度 (0-100)
+    let balance: Double             // 平衡性 (0-100)
+
     init(
         muscleStrength: Double = 0,
         stability: Double = 0,
         regularity: Double = 0,
         reactionTime: Double = 50,
-        completionRate: Double = 0
+        completionRate: Double = 0,
+        flexibility: Double = 0,
+        balance: Double = 0
     ) {
         self.muscleStrength = muscleStrength
         self.stability = stability
         self.regularity = regularity
         self.reactionTime = reactionTime
         self.completionRate = completionRate
+        self.flexibility = flexibility
+        self.balance = balance
     }
 }
 

@@ -163,7 +163,7 @@ extension ExerciseModule.Exercise {
     public static let flexibilityBasic: [ExerciseModule.Exercise] = [
         ExerciseModule.Exercise(
             id: UUID(),
-            name: "大腿後側肌群伸展",
+            name: "大腿後側肌群伸展（一）",
             englishName: "Hamstring stretch",
             imageName: "14.大腿後側肌群伸展（一）",
             category: "柔軟度訓練",
@@ -173,7 +173,7 @@ extension ExerciseModule.Exercise {
         ),
         ExerciseModule.Exercise(
             id: UUID(),
-            name: "大腿後側肌群伸展",
+            name: "大腿後側肌群伸展（二）",
             englishName: "Hamstring stretch",
             imageName: "15.大腿後側肌群伸展（二）",
             category: "柔軟度訓練",
@@ -183,7 +183,7 @@ extension ExerciseModule.Exercise {
         ),
         ExerciseModule.Exercise(
             id: UUID(),
-            name: "股四頭肌伸展",
+            name: "股四頭肌伸展（一）",
             englishName: "Quadriceps stretch",
             imageName: "16.股四頭肌伸展（一）",
             category: "柔軟度訓練",
@@ -193,7 +193,7 @@ extension ExerciseModule.Exercise {
         ),
         ExerciseModule.Exercise(
             id: UUID(),
-            name: "股四頭肌伸展",
+            name: "股四頭肌伸展（二）",
             englishName: "Quadriceps stretch",
             imageName: "17.股四頭肌伸展（二）",
             category: "柔軟度訓練",
@@ -203,7 +203,7 @@ extension ExerciseModule.Exercise {
         ),
         ExerciseModule.Exercise(
             id: UUID(),
-            name: "小腿後肌肉伸展",
+            name: "小腿後肌肉伸展（一）",
             englishName: "Calf stretch",
             imageName: "18.小腿後肌肉伸展（一）",
             category: "柔軟度訓練",
@@ -213,7 +213,7 @@ extension ExerciseModule.Exercise {
         ),
         ExerciseModule.Exercise(
             id: UUID(),
-            name: "小腿後肌肉伸展",
+            name: "小腿後肌肉伸展（二）",
             englishName: "Calf stretch",
             imageName: "19.小腿後肌肉伸展（二）",
             category: "柔軟度訓練",

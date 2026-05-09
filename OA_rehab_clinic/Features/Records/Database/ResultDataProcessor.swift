@@ -26,7 +26,7 @@ class ResultDataProcessor {
             try database.saveSetResult(setResult)
             
             // 保存組別指標
-            for metric in set.metrics {
+            for metric in set.metrics ?? [] {
                 let setMetric = convertToSetMetric(metric, setResultId: setResult.id!)
                 try database.saveSetMetric(setMetric)
             }
@@ -58,16 +58,16 @@ class ResultDataProcessor {
     private func convertToTrainingResult(_ patientResult: PatientTrainingResult) throws -> PersistentTrainingResult {
         return PersistentTrainingResult(
             id: nil,
-            sessionId: patientResult.sessionId,
+            sessionId: patientResult.sessionId ?? "",
             patientId: patientResult.patientId,
             exerciseId: patientResult.exerciseId,
             recordDate: patientResult.recordDate,
             menuId: patientResult.menuId,
-            leg: LegSide(rawValue: patientResult.leg) ?? .right,
-            
+            leg: LegSide(rawValue: patientResult.leg ?? "") ?? .right,
+
             // 目標參數
-            targetSets: patientResult.targetParameters.sets,
-            targetReps: patientResult.targetParameters.reps,
+            targetSets: patientResult.targetParameters.sets ?? 0,
+            targetReps: patientResult.targetParameters.reps ?? 0,
             targetDuration: patientResult.targetParameters.duration,
             targetRestTime: patientResult.targetParameters.restTime,
             targetKneeAngleStart: patientResult.targetParameters.kneeAngleStart,
@@ -81,13 +81,13 @@ class ResultDataProcessor {
             stimulationPulseWidth: patientResult.targetParameters.stimulationPulseWidth,
             
             // 實際結果
-            actualSets: patientResult.actualSets,
-            actualReps: patientResult.actualReps,
+            actualSets: patientResult.actualSets ?? 0,
+            actualReps: patientResult.actualReps ?? 0,
             totalDuration: patientResult.totalDuration,
             avgPainScore: patientResult.avgPainScore,
             notes: patientResult.notes,
-            overallCompletion: patientResult.overallCompletion,
-            overallPerformance: patientResult.overallPerformance,
+            overallCompletion: patientResult.overallCompletion ?? 0,
+            overallPerformance: patientResult.overallPerformance ?? 0,
             
             createdAt: Date(),
             updatedAt: Date()
@@ -101,7 +101,7 @@ class ResultDataProcessor {
             setNumber: setNumber,
             repsAchieved: patientSet.repsAchieved,
             duration: patientSet.duration,
-            restTime: patientSet.restTime,
+            restTime: patientSet.restTime ?? 0,
             painScore: patientSet.painScore,
             notes: patientSet.notes,
             createdAt: Date()

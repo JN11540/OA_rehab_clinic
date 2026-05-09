@@ -47,7 +47,7 @@ class ResultDataProcessor {
         let resultId = try database.saveAssessmentResult(assessmentResult)
         
         // 保存分項分數
-        for subScore in patientAssessment.subScores {
+        for subScore in patientAssessment.subScores ?? [] {
             let assessmentSubScore = convertToAssessmentSubScore(subScore, assessmentResultId: resultId)
             try database.saveAssessmentSubScore(assessmentSubScore)
         }
@@ -239,7 +239,7 @@ struct PatientAssessmentResult: Codable {
     let notes: String?
     
     // 分項分數
-    let subScores: [PatientSubScore]
+    let subScores: [PatientSubScore]?
 }
 
 struct PatientSubScore: Codable {

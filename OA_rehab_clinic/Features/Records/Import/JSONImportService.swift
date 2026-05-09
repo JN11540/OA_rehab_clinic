@@ -113,7 +113,7 @@ class JSONImportService {
 
     private func importAssessmentResult(_ result: PatientAssessmentResult) {
         let scores = Dictionary(uniqueKeysWithValues:
-            result.subScores.map { ($0.category, $0.score) }
+            (result.subScores ?? []).map { ($0.category, $0.score) }
         )
 
         let record = AssessmentRecord(

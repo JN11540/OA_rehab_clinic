@@ -468,10 +468,20 @@ struct DailyPerformanceView: View {
     private func createMetricsData(for exerciseRecord: TrainingRecord.ExerciseRecord) -> [MetricData]? {
         guard !exerciseRecord.sets.isEmpty else { return nil }
 
-        // 優先使用從 JSON 匯入的真實指標
-        if let strength = exerciseRecord.muscleStrength {
+        // 優先使用從 JSON 匯入的真實指標（任一指標不為 nil 即進入此分支）
+        let hasRealMetrics = exerciseRecord.muscleStrength != nil
+            || exerciseRecord.stability != nil
+            || exerciseRecord.regularity != nil
+            || exerciseRecord.reactionTime != nil
+            || exerciseRecord.completionRate != nil
+            || exerciseRecord.flexibility != nil
+            || exerciseRecord.balance != nil
+
+        if hasRealMetrics {
             var metrics: [MetricData] = []
-            metrics.append(MetricData(type: "肌力", score: strength, unit: "分", timestamp: Date()))
+            if let v = exerciseRecord.muscleStrength {
+                metrics.append(MetricData(type: "肌力", score: v, unit: "分", timestamp: Date()))
+            }
             if let v = exerciseRecord.stability {
                 metrics.append(MetricData(type: "穩定度", score: v, unit: "分", timestamp: Date()))
             }
@@ -484,10 +494,16 @@ struct DailyPerformanceView: View {
             if let v = exerciseRecord.completionRate {
                 metrics.append(MetricData(type: "完成度", score: v, unit: "分", timestamp: Date()))
             }
+            if let v = exerciseRecord.flexibility {
+                metrics.append(MetricData(type: "柔軟度", score: v, unit: "分", timestamp: Date()))
+            }
+            if let v = exerciseRecord.balance {
+                metrics.append(MetricData(type: "平衡性", score: v, unit: "分", timestamp: Date()))
+            }
             return metrics
         }
 
-        // fallback：舊資料無指標時，用粗略換算
+        // fallback：舊資料無任何指標時，用粗略換算
         let avgPerformance = exerciseRecord.sets.reduce(0.0) { $0 + Double($1.performance) } / Double(exerciseRecord.sets.count)
         return [
             MetricData(type: "表現評分", score: avgPerformance * 20, unit: "分", timestamp: Date())

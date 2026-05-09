@@ -32,6 +32,8 @@ struct TrainingRecord: Identifiable, Codable {
         let regularity: Double?
         let reactionTime: Double?
         let completionRate: Double?
+        let flexibility: Double?
+        let balance: Double?
 
         struct SetRecord: Codable {
             let repetitions: Int
@@ -107,6 +109,22 @@ class RecordStore: ObservableObject {
             }
             .flatMap { $0.exercises }
             .filter { $0.exerciseId == exerciseId }
+    }
+
+    func getExerciseProgressWithDate(
+        patientId: String,
+        exerciseName: String,
+        startDate: Date,
+        endDate: Date
+    ) -> [(date: Date, record: TrainingRecord.ExerciseRecord)] {
+        return trainingRecords
+            .filter { $0.patientId == patientId && $0.date >= startDate && $0.date <= endDate }
+            .flatMap { training in
+                training.exercises
+                    .filter { $0.exerciseId == exerciseName }
+                    .map { (date: training.date, record: $0) }
+            }
+            .sorted { $0.date < $1.date }
     }
     
     func getAssessmentProgress(patientId: String, type: AssessmentType, startDate: Date, endDate: Date) -> [AssessmentRecord] {

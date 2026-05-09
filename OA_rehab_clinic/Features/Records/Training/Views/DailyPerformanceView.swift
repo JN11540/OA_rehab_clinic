@@ -47,7 +47,8 @@ struct DailyPerformanceView: View {
         }
 
         guard let record = recordStore.getTrainingRecords(for: patient.id)
-            .first(where: { Calendar.current.isDate($0.date, inSameDayAs: selectedDate) })
+            .filter({ Calendar.current.isDate($0.date, inSameDayAs: selectedDate) })
+            .max(by: { $0.date < $1.date })
         else { return nil }
 
         // 患者 JSON 的 menuId 不是合法 UUID，menuStore 永遠找不到對應菜單。

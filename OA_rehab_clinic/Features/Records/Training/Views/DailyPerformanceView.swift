@@ -101,7 +101,9 @@ struct DailyPerformanceView: View {
                     stability: nil,
                     regularity: nil,
                     reactionTime: nil,
-                    completionRate: nil
+                    completionRate: nil,
+                    flexibility: nil,
+                    balance: nil
                 )
             },
             totalDuration: nil,

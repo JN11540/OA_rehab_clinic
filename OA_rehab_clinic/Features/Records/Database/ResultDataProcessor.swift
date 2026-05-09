@@ -167,37 +167,37 @@ class ResultDataProcessor {
 
 /// 個案App傳送的訓練結果數據結構
 struct PatientTrainingResult: Codable {
-    let sessionId: String
+    let sessionId: String?
     let patientId: String
     let exerciseId: String
     let recordDate: Date
     let menuId: String?
-    let leg: String // "左腿" or "右腿"
-    
+    let leg: String?
+
     // 目標參數 (從訓練安排複製)
     let targetParameters: PatientTargetParameters
-    
+
     // 實際執行結果
-    let actualSets: Int
-    let actualReps: Int
+    let actualSets: Int?
+    let actualReps: Int?
     let totalDuration: TimeInterval
     let avgPainScore: Double?
     let notes: String?
-    
+
     // 整體表現
-    let overallCompletion: Double // 0.0-1.0
-    let overallPerformance: Double // 1.0-5.0
-    
+    let overallCompletion: Double?
+    let overallPerformance: Double?
+
     // 詳細的組別結果
     let sets: [PatientSetResult]
-    
+
     // 整體指標 (對應CSV中的結果呈現)
     let overallMetrics: [PatientMetric]
 }
 
 struct PatientTargetParameters: Codable {
-    let sets: Int
-    let reps: Int
+    let sets: Int?
+    let reps: Int?
     let duration: Int?
     let restTime: Int
     let kneeAngleStart: Int?
@@ -214,12 +214,10 @@ struct PatientTargetParameters: Codable {
 struct PatientSetResult: Codable {
     let repsAchieved: Int
     let duration: TimeInterval
-    let restTime: TimeInterval
+    let restTime: TimeInterval?
     let painScore: Double?
     let notes: String?
-    
-    // 該組的詳細指標
-    let metrics: [PatientMetric]
+    let metrics: [PatientMetric]?
 }
 
 struct PatientMetric: Codable {

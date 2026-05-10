@@ -188,13 +188,13 @@ struct GenericPerformanceChartView: View {
     let exerciseName: String
     let parentDateRange: DateRange
 
-    @StateObject private var dataManager = TrainingDataManager.shared
-    @State private var trainingResults: [TrainingVisualizationData] = []
+    @StateObject private var recordStore = RecordStore.shared
+    @State private var exerciseResults: [(date: Date, record: TrainingRecord.ExerciseRecord)] = []
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(spacing: 16) {
-                if !trainingResults.isEmpty {
+                if !exerciseResults.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("表現指標趨勢")
                             .font(.title3)
@@ -204,37 +204,37 @@ struct GenericPerformanceChartView: View {
                         VStack(spacing: 16) {
                             PerformanceChartCard(
                                 title: "肌力",
-                                data: trainingResults.map { ($0.date, $0.performance.muscleStrength) },
+                                data: exerciseResults.map { ($0.date, $0.record.muscleStrength ?? 0) },
                                 color: .red, unit: "分"
                             )
                             PerformanceChartCard(
                                 title: "穩定度",
-                                data: trainingResults.map { ($0.date, $0.performance.stability) },
+                                data: exerciseResults.map { ($0.date, $0.record.stability ?? 0) },
                                 color: .blue, unit: "分"
                             )
                             PerformanceChartCard(
                                 title: "規律性",
-                                data: trainingResults.map { ($0.date, $0.performance.regularity) },
+                                data: exerciseResults.map { ($0.date, $0.record.regularity ?? 0) },
                                 color: .green, unit: "分"
                             )
                             PerformanceChartCard(
                                 title: "反應時間",
-                                data: trainingResults.map { ($0.date, $0.performance.reactionTime) },
+                                data: exerciseResults.map { ($0.date, $0.record.reactionTime ?? 0) },
                                 color: .orange, unit: "分"
                             )
                             PerformanceChartCard(
                                 title: "完成度",
-                                data: trainingResults.map { ($0.date, $0.performance.completionRate) },
+                                data: exerciseResults.map { ($0.date, $0.record.completionRate ?? 0) },
                                 color: .purple, unit: "分"
                             )
                             PerformanceChartCard(
                                 title: "柔軟度",
-                                data: trainingResults.map { ($0.date, $0.performance.flexibility) },
+                                data: exerciseResults.map { ($0.date, $0.record.flexibility ?? 0) },
                                 color: .mint, unit: "分"
                             )
                             PerformanceChartCard(
                                 title: "平衡性",
-                                data: trainingResults.map { ($0.date, $0.performance.balance) },
+                                data: exerciseResults.map { ($0.date, $0.record.balance ?? 0) },
                                 color: .indigo, unit: "分"
                             )
                         }
@@ -259,8 +259,8 @@ struct GenericPerformanceChartView: View {
         let endDate = Date()
         let startDate = Calendar.current.date(
             byAdding: .day, value: -range.days, to: endDate) ?? endDate
-        trainingResults = dataManager.getTrainingResults(
-            for: patient.id,
+        exerciseResults = recordStore.getExerciseProgressWithDate(
+            patientId: patient.id,
             exerciseName: name,
             startDate: startDate,
             endDate: endDate

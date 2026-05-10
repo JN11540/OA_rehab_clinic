@@ -26,7 +26,7 @@ class ResultDataProcessor {
             try database.saveSetResult(setResult)
             
             // 保存組別指標
-            for metric in set.metrics {
+            for metric in set.metrics ?? [] {
                 let setMetric = convertToSetMetric(metric, setResultId: setResult.id!)
                 try database.saveSetMetric(setMetric)
             }
@@ -47,7 +47,7 @@ class ResultDataProcessor {
         let resultId = try database.saveAssessmentResult(assessmentResult)
         
         // 保存分項分數
-        for subScore in patientAssessment.subScores {
+        for subScore in patientAssessment.subScores ?? [] {
             let assessmentSubScore = convertToAssessmentSubScore(subScore, assessmentResultId: resultId)
             try database.saveAssessmentSubScore(assessmentSubScore)
         }
@@ -58,16 +58,16 @@ class ResultDataProcessor {
     private func convertToTrainingResult(_ patientResult: PatientTrainingResult) throws -> PersistentTrainingResult {
         return PersistentTrainingResult(
             id: nil,
-            sessionId: patientResult.sessionId,
+            sessionId: patientResult.sessionId ?? "",
             patientId: patientResult.patientId,
-            exerciseId: patientResult.exerciseId,
+            exerciseId: ExerciseValidator.name(for: patientResult.exerciseId) ?? "",
             recordDate: patientResult.recordDate,
             menuId: patientResult.menuId,
-            leg: LegSide(rawValue: patientResult.leg) ?? .right,
-            
+            leg: LegSide(rawValue: patientResult.leg ?? "") ?? .right,
+
             // 目標參數
-            targetSets: patientResult.targetParameters.sets,
-            targetReps: patientResult.targetParameters.reps,
+            targetSets: patientResult.targetParameters.sets ?? 0,
+            targetReps: patientResult.targetParameters.reps ?? 0,
             targetDuration: patientResult.targetParameters.duration,
             targetRestTime: patientResult.targetParameters.restTime,
             targetKneeAngleStart: patientResult.targetParameters.kneeAngleStart,
@@ -81,13 +81,13 @@ class ResultDataProcessor {
             stimulationPulseWidth: patientResult.targetParameters.stimulationPulseWidth,
             
             // 實際結果
-            actualSets: patientResult.actualSets,
-            actualReps: patientResult.actualReps,
+            actualSets: patientResult.actualSets ?? 0,
+            actualReps: patientResult.actualReps ?? 0,
             totalDuration: patientResult.totalDuration,
             avgPainScore: patientResult.avgPainScore,
             notes: patientResult.notes,
-            overallCompletion: patientResult.overallCompletion,
-            overallPerformance: patientResult.overallPerformance,
+            overallCompletion: patientResult.overallCompletion ?? 0,
+            overallPerformance: patientResult.overallPerformance ?? 0,
             
             createdAt: Date(),
             updatedAt: Date()
@@ -101,7 +101,7 @@ class ResultDataProcessor {
             setNumber: setNumber,
             repsAchieved: patientSet.repsAchieved,
             duration: patientSet.duration,
-            restTime: patientSet.restTime,
+            restTime: patientSet.restTime ?? 0,
             painScore: patientSet.painScore,
             notes: patientSet.notes,
             createdAt: Date()
@@ -109,10 +109,11 @@ class ResultDataProcessor {
     }
     
     private func convertToSetMetric(_ patientMetric: PatientMetric, setResultId: Int64) -> SetMetric {
+        let typeName = MetricValidator.name(for: patientMetric.type) ?? ""
         return SetMetric(
             id: nil,
             setResultId: setResultId,
-            metricType: MetricType(rawValue: patientMetric.type) ?? .completionRate,
+            metricType: MetricType(rawValue: typeName) ?? .completionRate,
             value: patientMetric.value,
             unit: patientMetric.unit,
             timestamp: patientMetric.timestamp,
@@ -121,10 +122,11 @@ class ResultDataProcessor {
     }
     
     private func convertToPerformanceMetric(_ patientMetric: PatientMetric, trainingResultId: Int64) -> PerformanceMetric {
+        let typeName = MetricValidator.name(for: patientMetric.type) ?? ""
         return PerformanceMetric(
             id: nil,
             trainingResultId: trainingResultId,
-            metricType: MetricType(rawValue: patientMetric.type) ?? .completionRate,
+            metricType: MetricType(rawValue: typeName) ?? .completionRate,
             value: patientMetric.value,
             unit: patientMetric.unit,
             description: patientMetric.description,
@@ -133,11 +135,12 @@ class ResultDataProcessor {
     }
     
     private func convertToAssessmentResult(_ patientAssessment: PatientAssessmentResult) -> AssessmentResult {
+        let typeName = AssessmentValidator.name(for: patientAssessment.assessmentType) ?? ""
         return AssessmentResult(
             id: nil,
-            assessmentId: patientAssessment.assessmentId,
+            assessmentId: typeName,
             patientId: patientAssessment.patientId,
-            assessmentType: patientAssessment.assessmentType,
+            assessmentType: typeName,
             recordDate: patientAssessment.recordDate,
             totalScore: patientAssessment.totalScore,
             maxScore: patientAssessment.maxScore,
@@ -167,37 +170,37 @@ class ResultDataProcessor {
 
 /// 個案App傳送的訓練結果數據結構
 struct PatientTrainingResult: Codable {
-    let sessionId: String
+    let sessionId: String?
     let patientId: String
-    let exerciseId: String
+    let exerciseId: Int
     let recordDate: Date
     let menuId: String?
-    let leg: String // "左腿" or "右腿"
-    
+    let leg: String?
+
     // 目標參數 (從訓練安排複製)
     let targetParameters: PatientTargetParameters
-    
+
     // 實際執行結果
-    let actualSets: Int
-    let actualReps: Int
+    let actualSets: Int?
+    let actualReps: Int?
     let totalDuration: TimeInterval
     let avgPainScore: Double?
     let notes: String?
-    
+
     // 整體表現
-    let overallCompletion: Double // 0.0-1.0
-    let overallPerformance: Double // 1.0-5.0
-    
+    let overallCompletion: Double?
+    let overallPerformance: Double?
+
     // 詳細的組別結果
     let sets: [PatientSetResult]
-    
+
     // 整體指標 (對應CSV中的結果呈現)
     let overallMetrics: [PatientMetric]
 }
 
 struct PatientTargetParameters: Codable {
-    let sets: Int
-    let reps: Int
+    let sets: Int?
+    let reps: Int?
     let duration: Int?
     let restTime: Int
     let kneeAngleStart: Int?
@@ -214,16 +217,14 @@ struct PatientTargetParameters: Codable {
 struct PatientSetResult: Codable {
     let repsAchieved: Int
     let duration: TimeInterval
-    let restTime: TimeInterval
+    let restTime: TimeInterval?
     let painScore: Double?
     let notes: String?
-    
-    // 該組的詳細指標
-    let metrics: [PatientMetric]
+    let metrics: [PatientMetric]?
 }
 
 struct PatientMetric: Codable {
-    let type: String // MetricType.rawValue
+    let type: Int // MetricValidator id (1–7)
     let value: Double
     let unit: String?
     let description: String?
@@ -232,16 +233,15 @@ struct PatientMetric: Codable {
 
 /// 個案App傳送的評估結果數據結構
 struct PatientAssessmentResult: Codable {
-    let assessmentId: String
     let patientId: String
-    let assessmentType: String // AssessmentType.rawValue
+    let assessmentType: Int // AssessmentValidator id (1–6)
     let recordDate: Date
     let totalScore: Double
     let maxScore: Double
     let notes: String?
     
     // 分項分數
-    let subScores: [PatientSubScore]
+    let subScores: [PatientSubScore]?
 }
 
 struct PatientSubScore: Codable {

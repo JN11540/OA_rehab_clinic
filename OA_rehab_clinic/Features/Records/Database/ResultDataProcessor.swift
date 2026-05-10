@@ -140,7 +140,7 @@ class ResultDataProcessor {
             id: nil,
             assessmentId: typeName,
             patientId: patientAssessment.patientId,
-            assessmentType: AssessmentType(rawValue: typeName) ?? .womac,
+            assessmentType: typeName,
             recordDate: patientAssessment.recordDate,
             totalScore: patientAssessment.totalScore,
             maxScore: patientAssessment.maxScore,

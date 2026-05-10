@@ -114,6 +114,9 @@ class JSONImportService {
     // MARK: - 評量結果寫入（暫不啟用）
 
     private func importAssessmentResult(_ result: PatientAssessmentResult) {
+        guard let assessmentName = AssessmentValidator.name(for: result.assessmentType) else {
+            return
+        }
         let scores = Dictionary(uniqueKeysWithValues:
             (result.subScores ?? []).map { ($0.category, $0.score) }
         )
@@ -121,7 +124,7 @@ class JSONImportService {
         let record = AssessmentRecord(
             id: UUID(),
             patientId: result.patientId,
-            assessmentId: result.assessmentType,
+            assessmentId: assessmentName,
             date: result.recordDate,
             scores: scores,
             totalScore: result.totalScore,

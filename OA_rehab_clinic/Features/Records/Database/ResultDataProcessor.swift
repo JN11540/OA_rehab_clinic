@@ -234,7 +234,7 @@ struct PatientMetric: Codable {
 struct PatientAssessmentResult: Codable {
     let assessmentId: String
     let patientId: String
-    let assessmentType: String // AssessmentType.rawValue
+    let assessmentType: Int // AssessmentValidator id (1–6)
     let recordDate: Date
     let totalScore: Double
     let maxScore: Double

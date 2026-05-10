@@ -109,10 +109,11 @@ class ResultDataProcessor {
     }
     
     private func convertToSetMetric(_ patientMetric: PatientMetric, setResultId: Int64) -> SetMetric {
+        let typeName = MetricValidator.name(for: patientMetric.type) ?? ""
         return SetMetric(
             id: nil,
             setResultId: setResultId,
-            metricType: MetricType(rawValue: patientMetric.type) ?? .completionRate,
+            metricType: MetricType(rawValue: typeName) ?? .completionRate,
             value: patientMetric.value,
             unit: patientMetric.unit,
             timestamp: patientMetric.timestamp,
@@ -121,10 +122,11 @@ class ResultDataProcessor {
     }
     
     private func convertToPerformanceMetric(_ patientMetric: PatientMetric, trainingResultId: Int64) -> PerformanceMetric {
+        let typeName = MetricValidator.name(for: patientMetric.type) ?? ""
         return PerformanceMetric(
             id: nil,
             trainingResultId: trainingResultId,
-            metricType: MetricType(rawValue: patientMetric.type) ?? .completionRate,
+            metricType: MetricType(rawValue: typeName) ?? .completionRate,
             value: patientMetric.value,
             unit: patientMetric.unit,
             description: patientMetric.description,
@@ -169,7 +171,7 @@ class ResultDataProcessor {
 struct PatientTrainingResult: Codable {
     let sessionId: String?
     let patientId: String
-    let exerciseId: String
+    let exerciseId: Int
     let recordDate: Date
     let menuId: String?
     let leg: String?
@@ -221,7 +223,7 @@ struct PatientSetResult: Codable {
 }
 
 struct PatientMetric: Codable {
-    let type: String // MetricType.rawValue
+    let type: Int // MetricValidator id (1–7)
     let value: Double
     let unit: String?
     let description: String?

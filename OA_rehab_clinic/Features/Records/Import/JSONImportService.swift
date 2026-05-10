@@ -38,8 +38,8 @@ class JSONImportService {
 
         // 嘗試訓練結果（單筆）
         if let result = try? decoder.decode(PatientTrainingResult.self, from: data) {
-            guard ExerciseValidator.isValid(result.exerciseId) else {
-                throw ImportError.invalidExerciseId(result.exerciseId)
+            guard ExerciseValidator.name(for: result.exerciseId) != nil else {
+                throw ImportError.invalidExerciseId(String(result.exerciseId))
             }
             importTrainingResult(result)
             return "訓練紀錄匯入成功"
@@ -62,8 +62,10 @@ class JSONImportService {
     }
 
     private func buildTrainingRecord(from result: PatientTrainingResult) -> TrainingRecord {
-        func metric(_ type: String) -> Double? {
-            result.overallMetrics.first(where: { $0.type == type })?.value
+        func metric(_ typeName: String) -> Double? {
+            result.overallMetrics.first(where: {
+                MetricValidator.name(for: $0.type) == typeName
+            })?.value
         }
 
         let setRecords = result.sets.map { s in
@@ -78,7 +80,7 @@ class JSONImportService {
 
         let exerciseRecord = TrainingRecord.ExerciseRecord(
             id: UUID(),
-            exerciseId: result.exerciseId,
+            exerciseId: ExerciseValidator.name(for: result.exerciseId) ?? "",
             sets: setRecords,
             targetRestTime: result.targetParameters.restTime,
             targetDuration: result.targetParameters.duration,

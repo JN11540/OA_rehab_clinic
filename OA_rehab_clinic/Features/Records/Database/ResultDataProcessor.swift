@@ -135,11 +135,12 @@ class ResultDataProcessor {
     }
     
     private func convertToAssessmentResult(_ patientAssessment: PatientAssessmentResult) -> AssessmentResult {
+        let typeName = AssessmentValidator.name(for: patientAssessment.assessmentType) ?? ""
         return AssessmentResult(
             id: nil,
-            assessmentId: patientAssessment.assessmentId,
+            assessmentId: typeName,
             patientId: patientAssessment.patientId,
-            assessmentType: patientAssessment.assessmentType,
+            assessmentType: AssessmentType(rawValue: typeName) ?? .womac,
             recordDate: patientAssessment.recordDate,
             totalScore: patientAssessment.totalScore,
             maxScore: patientAssessment.maxScore,
@@ -232,7 +233,6 @@ struct PatientMetric: Codable {
 
 /// 個案App傳送的評估結果數據結構
 struct PatientAssessmentResult: Codable {
-    let assessmentId: String
     let patientId: String
     let assessmentType: Int // AssessmentValidator id (1–6)
     let recordDate: Date

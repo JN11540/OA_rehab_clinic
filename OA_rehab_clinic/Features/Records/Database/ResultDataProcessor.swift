@@ -60,7 +60,7 @@ class ResultDataProcessor {
             id: nil,
             sessionId: patientResult.sessionId ?? "",
             patientId: patientResult.patientId,
-            exerciseId: patientResult.exerciseId,
+            exerciseId: ExerciseValidator.name(for: patientResult.exerciseId) ?? "",
             recordDate: patientResult.recordDate,
             menuId: patientResult.menuId,
             leg: LegSide(rawValue: patientResult.leg ?? "") ?? .right,
